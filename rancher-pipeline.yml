@@ -1,0 +1,13 @@
+stages:
+- name: assignment2-stage
+  steps:
+  - publishImageConfig:
+      dockerfilePath: ./Dockerfile
+      buildContext: .
+      tag: assignment2-v1
+  when:
+    branch:
+      include:
+      - master
+timeout: 60
+notification: {}
